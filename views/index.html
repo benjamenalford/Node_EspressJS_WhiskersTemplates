@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <h2>{pageContent.title}</h1>
+            <p>{pageContent.content}</p>
+
+    </div>
+
+    <div class="row">
+        {for item in pageContent.test.testSimpleList}
+        <div class="col-2">
+            {item}
+        </div>
+        {/for}
+    </div>
+
+</div>
