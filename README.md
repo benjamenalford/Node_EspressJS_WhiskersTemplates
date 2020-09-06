@@ -2,8 +2,8 @@
 Sample Framework using Node, ExpressJS, and Whiskers HTML template egine
 
 
-## Installation npm --install
-
+## Installation
+- npm --install
 
 ## Running
 - npm start  command will start with nodemon and restart on all changes

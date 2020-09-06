@@ -1,16 +1,76 @@
 <div class="container">
+    <script>
+        // d3.json("/", {
+        //         method: "POST",
+        //     },
+        //     function(data) {
+        //         console.log(data);
+        //     })
+        // var dataDiv = d3.select("body");
+        // dataDiv.select("#   ")
+        //     .data(d3.json("/", {
+        //             method: "POST",
+        //         },
+        //         function(data) {
+        //             return data
+        //         }))
+        //     .enter()
+        //     .append("div")
+        // console.log(dataDiv)
+        // .attr(circleAttrs) // Get attributes from circleAttrs var
+        // .on("mouseover", handleMouseOver)
+        // .on("mouseout", handleMouseOut);
+    </script>
     <div class="row">
         <h2>{pageContent.title}</h1>
             <p>{pageContent.content}</p>
-
     </div>
-
-    <div class="row">
+    <!-- <div class="row">
         {for item in pageContent.test.testSimpleList}
         <div class="col-2">
             {item}
         </div>
         {/for}
-    </div>
+    </div> -->
+    <div id="data">
 
+    </div>
+    <div class="row">
+        <h4>Config Settings</h4>
+        <form method="post">
+            <div class="form-group">
+                {for item in pageContent.data} {for key in item.keys}
+                <div class="col-2">
+                    <label for="{key}">{key}: </label>
+                </div>
+                <div class="">
+                    <input type="text" class="form-control" id="{key}" aria-describedby="{key}Help" placeholder="{key}">
+                    <small id="{key}Help" class="form-text text-muted">help txt</small>
+                </div>
+                {/for} {/for}
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+
+            </div>
+        </form>
+    </div>
+    <div class="row hidden">
+        <form method="post">
+            <div class="form-group">
+                <label for="inputFile">Input File</label>
+                <input type="text" class="form-control" id="inputFile" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <!-- <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div> -->
+            <!--  d3.event.preventDefault(); -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 </div>
